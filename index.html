@@ -29,10 +29,7 @@
       margin: 0 auto;
     }
 
-
-    /* =========================
-       ЛОГОТИП
-    ========================= */
+    /* ЛОГОТИП */
 
     .header {
       padding: 45px 0 25px;
@@ -45,10 +42,7 @@
       height: auto;
     }
 
-
-    /* =========================
-       О КОМПАНИИ
-    ========================= */
+    /* О КОМПАНИИ */
 
     .about {
       padding: 55px 0 70px;
@@ -101,13 +95,10 @@
       font-weight: 600;
     }
 
-
-    /* =========================
-       АНКЕТА
-    ========================= */
+    /* АНКЕТА */
 
     .form-section {
-      padding: 20px 0 90px;
+      padding: 30px 0 90px;
     }
 
     .form-header {
@@ -128,23 +119,25 @@
     }
 
     .form-wrapper {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
       background: #ffffff;
       border-radius: 26px;
       overflow: hidden;
       box-shadow: 0 15px 50px rgba(21, 48, 36, 0.08);
+      padding: 20px;
     }
 
     .form-wrapper iframe {
       display: block;
-      width: 100%;
-      min-height: 900px;
+      width: 100% !important;
+      min-height: 1100px;
       border: 0;
+      margin: 0 auto;
     }
 
-
-    /* =========================
-       ФИНАЛ
-    ========================= */
+    /* ДО ВСТРЕЧИ */
 
     .goodbye {
       background: #143d2c;
@@ -181,15 +174,12 @@
       font-size: 13px;
     }
 
-
-    /* =========================
-       МОБИЛЬНАЯ ВЕРСИЯ
-    ========================= */
+    /* МОБИЛЬНАЯ ВЕРСИЯ */
 
     @media (max-width: 600px) {
 
       .container {
-        width: min(100% - 28px, 1100px);
+        width: calc(100% - 24px);
       }
 
       .header {
@@ -224,11 +214,7 @@
       }
 
       .form-section {
-        padding-bottom: 60px;
-      }
-
-      .form-header {
-        margin-bottom: 25px;
+        padding: 20px 0 60px;
       }
 
       .form-header h2 {
@@ -240,11 +226,14 @@
       }
 
       .form-wrapper {
+        width: 100%;
+        padding: 5px;
         border-radius: 18px;
       }
 
       .form-wrapper iframe {
-        min-height: 1050px;
+        width: 100% !important;
+        min-height: 1200px;
       }
 
       .goodbye {
@@ -259,21 +248,17 @@
         font-size: 17px;
       }
     }
-
   </style>
 </head>
 
 
 <body>
 
-  <!-- =========================
-       ЛОГОТИП
-  ========================== -->
+  <!-- ЛОГОТИП -->
 
   <header class="header">
     <div class="container">
 
-      <!-- Замените logo.png на файл логотипа ТЕРРА -->
       <img
         src="logo.png"
         alt="ТЕРРА"
@@ -284,9 +269,7 @@
   </header>
 
 
-  <!-- =========================
-       О КОМПАНИИ
-  ========================== -->
+  <!-- О КОМПАНИИ -->
 
   <section class="about">
 
@@ -308,7 +291,6 @@
           проверим перед покупкой, организуем доставку
           и сопроводим оформление документов.
         </p>
-
 
         <div class="advantages">
 
@@ -337,10 +319,7 @@
   </section>
 
 
-
-  <!-- =========================
-       АНКЕТА
-  ========================== -->
+  <!-- АНКЕТА -->
 
   <section class="form-section">
 
@@ -357,8 +336,8 @@
         </h2>
 
         <p>
-          Заполните короткую анкету.
-          Мы изучим ваши пожелания и предложим подходящие варианты.
+          Заполните анкету — мы изучим ваши пожелания
+          и предложим подходящие варианты.
         </p>
 
       </div>
@@ -366,13 +345,15 @@
 
       <div class="form-wrapper">
 
-        <!--
-          ВСТАВЬТЕ СЮДА ССЫЛКУ ЯНДЕКС ФОРМЫ
-        -->
+        <!-- ЯНДЕКС ФОРМА -->
+
+        <script src="https://forms.yandex.ru/_static/embed.js"></script>
 
         <iframe
-          src="ССЫЛКА_НА_ЯНДЕКС_ФОРМУ"
-          frameborder="0">
+          src="https://forms.yandex.ru/u/6a7c21bf6d2d73257891e2ea?iframe=1"
+          frameborder="0"
+          name="ya-form-6a7c21bf6d2d73257891e2ea"
+          width="650">
         </iframe>
 
       </div>
@@ -382,10 +363,7 @@
   </section>
 
 
-
-  <!-- =========================
-       ДО ВСТРЕЧИ
-  ========================== -->
+  <!-- ДО ВСТРЕЧИ -->
 
   <section class="goodbye">
 
@@ -400,9 +378,6 @@
         чтобы обсудить автомобиль и подготовить варианты для подбора.
       </p>
 
-      <!-- Можно удалить второй логотип,
-           если он здесь не нужен -->
-
       <img
         src="logo.png"
         alt="ТЕРРА"
@@ -415,11 +390,8 @@
 
 
   <footer class="footer">
-
     © ТЕРРА — автомобили из Китая и Кореи под заказ
-
   </footer>
-
 
 </body>
 </html>
