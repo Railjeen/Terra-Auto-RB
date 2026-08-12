@@ -7,6 +7,7 @@
   <title>ТЕРРА — автомобили из Китая и Кореи под заказ</title>
 
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -19,244 +20,561 @@
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f4;
+      background:
+        radial-gradient(circle at 50% 0%, #ffffff 0%, #f6f7f3 45%, #eef1ec 100%);
       color: #14231c;
       line-height: 1.5;
+      overflow-x: hidden;
     }
 
     .container {
-      width: min(1100px, calc(100% - 40px));
+      width: min(1180px, calc(100% - 40px));
       margin: 0 auto;
     }
 
-    /* ЛОГОТИП */
+
+    /* =====================================
+       HEADER
+    ===================================== */
 
     .header {
-      padding: 45px 0 25px;
+      padding: 35px 0 20px;
       text-align: center;
     }
 
     .logo {
-      width: 230px;
+      width: 235px;
       max-width: 70%;
       height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
-    /* О КОМПАНИИ */
+
+    /* =====================================
+       HERO
+    ===================================== */
 
     .about {
-      padding: 55px 0 70px;
+      padding: 65px 20px 90px;
       text-align: center;
+      position: relative;
     }
 
     .about-inner {
-      max-width: 850px;
+      max-width: 900px;
       margin: 0 auto;
     }
 
     .eyebrow {
       display: inline-block;
-      margin-bottom: 18px;
-      font-size: 14px;
+      margin-bottom: 20px;
+      font-size: 13px;
       font-weight: 700;
-      letter-spacing: 1.5px;
+      letter-spacing: 2.4px;
       text-transform: uppercase;
       color: #39775b;
     }
 
     h1 {
-      font-size: clamp(34px, 5vw, 62px);
-      line-height: 1.05;
-      letter-spacing: -1.5px;
-      margin-bottom: 25px;
+      font-size: clamp(42px, 5.2vw, 72px);
+      line-height: 1;
+      letter-spacing: -2.6px;
+      max-width: 950px;
+      margin: 0 auto 30px;
     }
 
     .about-text {
       max-width: 760px;
       margin: 0 auto;
       font-size: 20px;
-      color: #506058;
+      line-height: 1.65;
+      color: #65716b;
     }
+
+
+    /* =====================================
+       ПРЕИМУЩЕСТВА
+    ===================================== */
 
     .advantages {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 35px;
+      gap: 10px;
+      margin-top: 38px;
     }
 
     .advantage {
-      background: #ffffff;
-      border: 1px solid #e0e5e1;
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(20,61,44,.09);
       border-radius: 100px;
-      padding: 12px 20px;
-      font-size: 15px;
+
+      padding: 12px 21px;
+
+      font-size: 14px;
       font-weight: 600;
+
+      box-shadow: 0 10px 35px rgba(20,61,44,.04);
     }
 
-    /* АНКЕТА */
+
+    /* =====================================
+       FORM SECTION
+    ===================================== */
 
     .form-section {
-      padding: 30px 0 90px;
+      padding: 45px 0 120px;
+      position: relative;
     }
 
     .form-header {
+      max-width: 760px;
+      margin: 0 auto 55px;
+      padding: 0 20px;
       text-align: center;
-      max-width: 750px;
-      margin: 0 auto 35px;
     }
 
     .form-header h2 {
-      font-size: clamp(30px, 4vw, 46px);
-      margin-bottom: 14px;
-      line-height: 1.1;
+      font-size: clamp(35px, 4vw, 52px);
+      line-height: 1.05;
+      letter-spacing: -1.8px;
+      margin-bottom: 18px;
     }
 
     .form-header p {
+      color: #65716b;
       font-size: 18px;
-      color: #66736d;
+      max-width: 620px;
+      margin: 0 auto;
     }
 
-    .form-wrapper {
-      width: 100%;
-      max-width: 760px;
+
+    /* =====================================
+       ОСНОВНАЯ КОМПОЗИЦИЯ
+    ===================================== */
+
+    .form-stage {
+      position: relative;
+      width: min(1550px, 100%);
       margin: 0 auto;
-      background: #ffffff;
-      border-radius: 26px;
-      overflow: hidden;
-      box-shadow: 0 15px 50px rgba(21, 48, 36, 0.08);
-      padding: 20px;
+    }
+
+
+    /* =====================================
+       ЦЕНТРАЛЬНАЯ ФОРМА
+    ===================================== */
+
+    .form-wrapper {
+      width: min(760px, calc(100% - 40px));
+      margin: 0 auto;
+
+      position: relative;
+      z-index: 10;
+
+      background: rgba(255,255,255,.96);
+
+      border-radius: 34px;
+
+      padding: 22px;
+
+      border: 1px solid rgba(20,61,44,.06);
+
+      box-shadow:
+        0 35px 100px rgba(19,55,40,.12),
+        0 4px 16px rgba(19,55,40,.05);
     }
 
     .form-wrapper iframe {
       display: block;
       width: 100% !important;
-      min-height: 1100px;
+      min-height: 1650px;
       border: 0;
-      margin: 0 auto;
     }
 
-    /* ДО ВСТРЕЧИ */
+
+    /* =====================================
+       БОКОВЫЕ АВТОМОБИЛИ
+    ===================================== */
+
+    .car-side {
+      position: absolute;
+
+      top: 0;
+      bottom: 0;
+
+      width: 360px;
+
+      pointer-events: none;
+
+      z-index: 3;
+    }
+
+    .car-side.left {
+      left: 0;
+    }
+
+    .car-side.right {
+      right: 0;
+    }
+
+
+    /* sticky контейнер */
+
+    .car-sticky {
+      position: sticky;
+      top: 160px;
+
+      height: 600px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    /* контейнер машины */
+
+    .car-display {
+      position: relative;
+
+      width: 100%;
+      height: 420px;
+    }
+
+
+    /* все машины */
+
+    .floating-car {
+      position: absolute;
+
+      left: 50%;
+      top: 50%;
+
+      width: 390px;
+      max-height: 340px;
+
+      object-fit: contain;
+
+      opacity: 0;
+
+      transform:
+        translate(-50%, -45%)
+        scale(.92);
+
+      transition:
+        opacity .75s ease,
+        transform .9s cubic-bezier(.22,.61,.36,1);
+
+      filter:
+        drop-shadow(0 35px 25px rgba(0,0,0,.15));
+    }
+
+
+    .floating-car.active {
+      opacity: 1;
+
+      transform:
+        translate(-50%, -50%)
+        scale(1);
+    }
+
+
+    /* небольшое различие по сторонам */
+
+    .car-side.left .floating-car {
+      transform:
+        translate(-54%, -45%)
+        scale(.92);
+    }
+
+    .car-side.left .floating-car.active {
+      transform:
+        translate(-54%, -50%)
+        scale(1);
+    }
+
+
+    .car-side.right .floating-car {
+      transform:
+        translate(-46%, -45%)
+        scale(.92);
+    }
+
+    .car-side.right .floating-car.active {
+      transform:
+        translate(-46%, -50%)
+        scale(1);
+    }
+
+
+    /* подпись */
+
+    .car-label {
+      position: absolute;
+
+      left: 50%;
+      bottom: 10px;
+
+      transform: translateX(-50%);
+
+      white-space: nowrap;
+
+      padding: 10px 17px;
+
+      border-radius: 100px;
+
+      background: rgba(255,255,255,.72);
+
+      backdrop-filter: blur(12px);
+
+      border: 1px solid rgba(20,61,44,.09);
+
+      box-shadow: 0 12px 32px rgba(20,61,44,.08);
+
+      color: #183c2c;
+
+      font-size: 13px;
+      font-weight: 700;
+
+      opacity: 0;
+      transition: opacity .5s ease;
+    }
+
+    .car-label.active {
+      opacity: 1;
+    }
+
+
+    /* =====================================
+       ДЕКОР
+    ===================================== */
+
+    .form-stage::before {
+      content: "";
+
+      position: absolute;
+
+      width: 1100px;
+      height: 1100px;
+
+      left: 50%;
+      top: 200px;
+
+      transform: translateX(-50%);
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(58,119,91,.07) 0%,
+          rgba(58,119,91,.02) 45%,
+          transparent 70%
+        );
+
+      pointer-events: none;
+    }
+
+
+    /* =====================================
+       ДО ВСТРЕЧИ
+    ===================================== */
 
     .goodbye {
-      background: #143d2c;
-      color: white;
-      padding: 100px 20px;
+      background:
+        linear-gradient(
+          135deg,
+          #173f2e,
+          #0f2f22
+        );
+
+      color: #ffffff;
+
+      padding: 125px 20px;
+
       text-align: center;
+    }
+
+    .goodbye-inner {
+      max-width: 750px;
+      margin: 0 auto;
     }
 
     .goodbye h2 {
-      font-size: clamp(42px, 7vw, 78px);
-      line-height: 1;
-      margin-bottom: 22px;
+      font-size: clamp(52px, 7vw, 88px);
+      line-height: .95;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
     }
 
     .goodbye p {
-      max-width: 600px;
+      max-width: 610px;
       margin: 0 auto;
+
       font-size: 19px;
-      color: rgba(255,255,255,0.75);
+      line-height: 1.65;
+
+      color: rgba(255,255,255,.72);
     }
 
     .goodbye-logo {
-      width: 160px;
+      width: 170px;
       max-width: 50%;
-      margin-top: 40px;
+
+      margin-top: 45px;
+
       filter: brightness(0) invert(1);
     }
 
+
+    /* =====================================
+       FOOTER
+    ===================================== */
+
     .footer {
-      background: #0d2a1e;
-      color: rgba(255,255,255,0.55);
+      background: #0a251a;
+
+      color: rgba(255,255,255,.48);
+
       text-align: center;
-      padding: 24px;
+
+      padding: 25px;
+
       font-size: 13px;
     }
 
-    /* МОБИЛЬНАЯ ВЕРСИЯ */
+
+    /* =====================================
+       МАЛЕНЬКИЕ ПК / НОУТБУКИ
+    ===================================== */
+
+    @media (max-width: 1350px) {
+
+      .car-side {
+        width: 280px;
+      }
+
+      .floating-car {
+        width: 310px;
+      }
+
+    }
+
+
+    @media (max-width: 1150px) {
+
+      .car-side {
+        display: none;
+      }
+
+      .form-wrapper {
+        width: min(760px, calc(100% - 30px));
+      }
+
+    }
+
+
+    /* =====================================
+       MOBILE
+    ===================================== */
 
     @media (max-width: 600px) {
 
-      .container {
-        width: calc(100% - 24px);
-      }
-
       .header {
-        padding: 30px 0 15px;
+        padding: 25px 0 15px;
       }
 
       .logo {
-        width: 185px;
+        width: 180px;
       }
 
       .about {
-        padding: 35px 0 50px;
+        padding: 40px 15px 60px;
       }
 
       h1 {
-        font-size: 37px;
-        letter-spacing: -0.8px;
+        font-size: 38px;
+        letter-spacing: -1.2px;
       }
 
       .about-text {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .advantages {
-        gap: 8px;
         margin-top: 28px;
+        gap: 7px;
       }
 
       .advantage {
-        padding: 10px 15px;
-        font-size: 13px;
+        font-size: 12px;
+        padding: 9px 13px;
       }
 
       .form-section {
-        padding: 20px 0 60px;
+        padding: 20px 0 65px;
+      }
+
+      .form-header {
+        margin-bottom: 30px;
       }
 
       .form-header h2 {
         font-size: 31px;
+        letter-spacing: -.7px;
       }
 
       .form-header p {
-        font-size: 16px;
+        font-size: 15px;
       }
 
       .form-wrapper {
-        width: 100%;
-        padding: 5px;
+        width: calc(100% - 14px);
+
+        padding: 3px;
+
         border-radius: 18px;
+
+        box-shadow:
+          0 15px 40px rgba(19,55,40,.08);
       }
 
       .form-wrapper iframe {
-        width: 100% !important;
-        min-height: 1200px;
+        min-height: 1800px;
       }
 
       .goodbye {
-        padding: 80px 20px;
+        padding: 85px 20px;
       }
 
       .goodbye h2 {
-        font-size: 48px;
+        font-size: 50px;
+        letter-spacing: -1px;
       }
 
       .goodbye p {
-        font-size: 17px;
+        font-size: 16px;
       }
+
     }
+
   </style>
 </head>
 
 
+
 <body>
 
-  <!-- ЛОГОТИП -->
+
+  <!-- =====================================
+       ЛОГОТИП
+  ===================================== -->
 
   <header class="header">
+
     <div class="container">
 
       <img
@@ -266,50 +584,56 @@
       >
 
     </div>
+
   </header>
 
 
-  <!-- О КОМПАНИИ -->
+
+  <!-- =====================================
+       О КОМПАНИИ
+  ===================================== -->
 
   <section class="about">
 
-    <div class="container">
+    <div class="about-inner">
 
-      <div class="about-inner">
+      <span class="eyebrow">
+        ТЕРРА ИМПОРТ
+      </span>
 
-        <span class="eyebrow">
-          ТЕРРА ИМПОРТ
-        </span>
 
-        <h1>
-          Автомобили из Китая и Кореи под заказ
-        </h1>
+      <h1>
+        Автомобили из Китая и Кореи под заказ
+      </h1>
 
-        <p class="about-text">
-          Подбираем и привозим автомобили под ключ.
-          Поможем выбрать автомобиль под ваш бюджет,
-          проверим перед покупкой, организуем доставку
-          и сопроводим оформление документов.
-        </p>
 
-        <div class="advantages">
+      <p class="about-text">
 
-          <div class="advantage">
-            Китай и Корея
-          </div>
+        Подбираем и привозим автомобили под ключ.
 
-          <div class="advantage">
-            Новые и с пробегом
-          </div>
+        Поможем выбрать автомобиль под ваш бюджет,
+        проверим перед покупкой, организуем доставку
+        и сопроводим оформление документов.
 
-          <div class="advantage">
-            Подбор под бюджет
-          </div>
+      </p>
 
-          <div class="advantage">
-            Доставка под ключ
-          </div>
 
+      <div class="advantages">
+
+        <div class="advantage">
+          Китай и Корея
+        </div>
+
+        <div class="advantage">
+          Новые и с пробегом
+        </div>
+
+        <div class="advantage">
+          Подбор под бюджет
+        </div>
+
+        <div class="advantage">
+          Доставка под ключ
         </div>
 
       </div>
@@ -319,64 +643,198 @@
   </section>
 
 
-  <!-- АНКЕТА -->
+
+  <!-- =====================================
+       АНКЕТА
+  ===================================== -->
 
   <section class="form-section">
 
-    <div class="container">
 
-      <div class="form-header">
+    <div class="form-header">
 
-        <span class="eyebrow">
-          ПОДБОР АВТОМОБИЛЯ
-        </span>
+      <span class="eyebrow">
+        ПОДБОР АВТОМОБИЛЯ
+      </span>
 
-        <h2>
-          Расскажите, какой автомобиль вы ищете
-        </h2>
+      <h2>
+        Расскажите, какой автомобиль вы ищете
+      </h2>
 
-        <p>
-          Заполните анкету — мы изучим ваши пожелания
-          и предложим подходящие варианты.
-        </p>
+      <p>
+        Заполните анкету — мы изучим ваши пожелания
+        и предложим подходящие варианты.
+      </p>
 
-      </div>
+    </div>
 
 
-      <div class="form-wrapper">
 
-        <!-- ЯНДЕКС ФОРМА -->
+    <div class="form-stage">
 
-        <script src="https://forms.yandex.ru/_static/embed.js"></script>
+
+      <!-- =====================================
+           ЛЕВЫЕ АВТО
+      ===================================== -->
+
+      <aside class="car-side left">
+
+        <div class="car-sticky">
+
+          <div class="car-display">
+
+
+            <img
+              src="car1.png"
+              class="floating-car active"
+              alt="Volkswagen Tiguan"
+            >
+
+
+            <img
+              src="car2.png"
+              class="floating-car"
+              alt="Toyota RAV4"
+            >
+
+
+            <img
+              src="car3.png"
+              class="floating-car"
+              alt="Volkswagen T-Roc"
+            >
+
+
+            <img
+              src="car4.png"
+              class="floating-car"
+              alt="Geely Monjaro"
+            >
+
+
+
+            <div
+              class="car-label active"
+              data-label="Volkswagen Tiguan">
+              Volkswagen Tiguan
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </aside>
+
+
+
+      <!-- =====================================
+           ФОРМА
+      ===================================== -->
+
+      <main class="form-wrapper">
+
+
+        <script
+          src="https://forms.yandex.ru/_static/embed.js">
+        </script>
+
 
         <iframe
+
           src="https://forms.yandex.ru/u/6a7c21bf6d2d73257891e2ea?iframe=1"
+
           frameborder="0"
+
           name="ya-form-6a7c21bf6d2d73257891e2ea"
+
           width="650">
+
         </iframe>
 
-      </div>
+
+      </main>
+
+
+
+      <!-- =====================================
+           ПРАВЫЕ АВТО
+      ===================================== -->
+
+      <aside class="car-side right">
+
+        <div class="car-sticky">
+
+          <div class="car-display">
+
+
+            <img
+              src="car5.png"
+              class="floating-car active"
+              alt="Kia Sorento"
+            >
+
+
+            <img
+              src="car6.png"
+              class="floating-car"
+              alt="Hyundai Santa Fe"
+            >
+
+
+            <img
+              src="car7.png"
+              class="floating-car"
+              alt="BMW X3"
+            >
+
+
+            <img
+              src="car8.png"
+              class="floating-car"
+              alt="Kia Carnival"
+            >
+
+
+
+            <div
+              class="car-label active"
+              data-label="Kia Sorento">
+              Kia Sorento
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </aside>
+
 
     </div>
 
   </section>
 
 
-  <!-- ДО ВСТРЕЧИ -->
+
+  <!-- =====================================
+       ДО ВСТРЕЧИ
+  ===================================== -->
 
   <section class="goodbye">
 
-    <div class="container">
+    <div class="goodbye-inner">
 
       <h2>
         До встречи!
       </h2>
 
+
       <p>
         Спасибо за заявку. Команда ТЕРРА свяжется с вами,
         чтобы обсудить автомобиль и подготовить варианты для подбора.
       </p>
+
 
       <img
         src="logo.png"
@@ -389,9 +847,171 @@
   </section>
 
 
+
   <footer class="footer">
+
     © ТЕРРА — автомобили из Китая и Кореи под заказ
+
   </footer>
+
+
+
+  <!-- =====================================
+       СМЕНА АВТО ПРИ ПРОКРУТКЕ
+  ===================================== -->
+
+  <script>
+
+    const formStage = document.querySelector('.form-stage');
+
+    const leftCars =
+      document.querySelectorAll('.car-side.left .floating-car');
+
+    const rightCars =
+      document.querySelectorAll('.car-side.right .floating-car');
+
+    const leftLabel =
+      document.querySelector('.car-side.left .car-label');
+
+    const rightLabel =
+      document.querySelector('.car-side.right .car-label');
+
+
+    const leftNames = [
+      'Volkswagen Tiguan',
+      'Toyota RAV4',
+      'Volkswagen T-Roc',
+      'Geely Monjaro'
+    ];
+
+
+    const rightNames = [
+      'Kia Sorento',
+      'Hyundai Santa Fe',
+      'BMW X3',
+      'Kia Carnival'
+    ];
+
+
+    let currentIndex = -1;
+
+
+    function updateCars() {
+
+      if (!formStage) return;
+
+
+      const rect =
+        formStage.getBoundingClientRect();
+
+
+      const stageHeight =
+        formStage.offsetHeight;
+
+
+      const viewportHeight =
+        window.innerHeight;
+
+
+      const scrolled =
+        -rect.top + viewportHeight * 0.35;
+
+
+      const available =
+        stageHeight - viewportHeight * 0.5;
+
+
+      let progress =
+        scrolled / available;
+
+
+      progress =
+        Math.max(0, Math.min(0.999, progress));
+
+
+      const index =
+        Math.floor(progress * leftCars.length);
+
+
+      if (index === currentIndex) {
+        return;
+      }
+
+
+      currentIndex = index;
+
+
+      leftCars.forEach((car, i) => {
+
+        car.classList.toggle(
+          'active',
+          i === index
+        );
+
+      });
+
+
+      rightCars.forEach((car, i) => {
+
+        car.classList.toggle(
+          'active',
+          i === index
+        );
+
+      });
+
+
+      if (leftLabel) {
+
+        leftLabel.classList.remove('active');
+
+        setTimeout(() => {
+
+          leftLabel.textContent =
+            leftNames[index];
+
+          leftLabel.classList.add('active');
+
+        }, 180);
+
+      }
+
+
+      if (rightLabel) {
+
+        rightLabel.classList.remove('active');
+
+        setTimeout(() => {
+
+          rightLabel.textContent =
+            rightNames[index];
+
+          rightLabel.classList.add('active');
+
+        }, 180);
+
+      }
+
+    }
+
+
+    window.addEventListener(
+      'scroll',
+      updateCars,
+      { passive: true }
+    );
+
+
+    window.addEventListener(
+      'resize',
+      updateCars
+    );
+
+
+    updateCars();
+
+  </script>
+
 
 </body>
 </html>
