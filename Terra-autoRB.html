@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ТЕРРА — автомобили из Китая и Кореи под заказ</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f7f4;
+      color: #14231c;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(1100px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+
+    /* =========================
+       ЛОГОТИП
+    ========================= */
+
+    .header {
+      padding: 45px 0 25px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 230px;
+      max-width: 70%;
+      height: auto;
+    }
+
+
+    /* =========================
+       О КОМПАНИИ
+    ========================= */
+
+    .about {
+      padding: 55px 0 70px;
+      text-align: center;
+    }
+
+    .about-inner {
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #39775b;
+    }
+
+    h1 {
+      font-size: clamp(34px, 5vw, 62px);
+      line-height: 1.05;
+      letter-spacing: -1.5px;
+      margin-bottom: 25px;
+    }
+
+    .about-text {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 20px;
+      color: #506058;
+    }
+
+    .advantages {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .advantage {
+      background: #ffffff;
+      border: 1px solid #e0e5e1;
+      border-radius: 100px;
+      padding: 12px 20px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+
+    /* =========================
+       АНКЕТА
+    ========================= */
+
+    .form-section {
+      padding: 20px 0 90px;
+    }
+
+    .form-header {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 35px;
+    }
+
+    .form-header h2 {
+      font-size: clamp(30px, 4vw, 46px);
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .form-header p {
+      font-size: 18px;
+      color: #66736d;
+    }
+
+    .form-wrapper {
+      background: #ffffff;
+      border-radius: 26px;
+      overflow: hidden;
+      box-shadow: 0 15px 50px rgba(21, 48, 36, 0.08);
+    }
+
+    .form-wrapper iframe {
+      display: block;
+      width: 100%;
+      min-height: 900px;
+      border: 0;
+    }
+
+
+    /* =========================
+       ФИНАЛ
+    ========================= */
+
+    .goodbye {
+      background: #143d2c;
+      color: white;
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    .goodbye h2 {
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: 1;
+      margin-bottom: 22px;
+    }
+
+    .goodbye p {
+      max-width: 600px;
+      margin: 0 auto;
+      font-size: 19px;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .goodbye-logo {
+      width: 160px;
+      max-width: 50%;
+      margin-top: 40px;
+      filter: brightness(0) invert(1);
+    }
+
+    .footer {
+      background: #0d2a1e;
+      color: rgba(255,255,255,0.55);
+      text-align: center;
+      padding: 24px;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       МОБИЛЬНАЯ ВЕРСИЯ
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      .container {
+        width: min(100% - 28px, 1100px);
+      }
+
+      .header {
+        padding: 30px 0 15px;
+      }
+
+      .logo {
+        width: 185px;
+      }
+
+      .about {
+        padding: 35px 0 50px;
+      }
+
+      h1 {
+        font-size: 37px;
+        letter-spacing: -0.8px;
+      }
+
+      .about-text {
+        font-size: 17px;
+      }
+
+      .advantages {
+        gap: 8px;
+        margin-top: 28px;
+      }
+
+      .advantage {
+        padding: 10px 15px;
+        font-size: 13px;
+      }
+
+      .form-section {
+        padding-bottom: 60px;
+      }
+
+      .form-header {
+        margin-bottom: 25px;
+      }
+
+      .form-header h2 {
+        font-size: 31px;
+      }
+
+      .form-header p {
+        font-size: 16px;
+      }
+
+      .form-wrapper {
+        border-radius: 18px;
+      }
+
+      .form-wrapper iframe {
+        min-height: 1050px;
+      }
+
+      .goodbye {
+        padding: 80px 20px;
+      }
+
+      .goodbye h2 {
+        font-size: 48px;
+      }
+
+      .goodbye p {
+        font-size: 17px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       ЛОГОТИП
+  ========================== -->
+
+  <header class="header">
+    <div class="container">
+
+      <!-- Замените logo.png на файл логотипа ТЕРРА -->
+      <img
+        src="logo.png"
+        alt="ТЕРРА"
+        class="logo"
+      >
+
+    </div>
+  </header>
+
+
+  <!-- =========================
+       О КОМПАНИИ
+  ========================== -->
+
+  <section class="about">
+
+    <div class="container">
+
+      <div class="about-inner">
+
+        <span class="eyebrow">
+          ТЕРРА ИМПОРТ
+        </span>
+
+        <h1>
+          Автомобили из Китая и Кореи под заказ
+        </h1>
+
+        <p class="about-text">
+          Подбираем и привозим автомобили под ключ.
+          Поможем выбрать автомобиль под ваш бюджет,
+          проверим перед покупкой, организуем доставку
+          и сопроводим оформление документов.
+        </p>
+
+
+        <div class="advantages">
+
+          <div class="advantage">
+            Китай и Корея
+          </div>
+
+          <div class="advantage">
+            Новые и с пробегом
+          </div>
+
+          <div class="advantage">
+            Подбор под бюджет
+          </div>
+
+          <div class="advantage">
+            Доставка под ключ
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       АНКЕТА
+  ========================== -->
+
+  <section class="form-section">
+
+    <div class="container">
+
+      <div class="form-header">
+
+        <span class="eyebrow">
+          ПОДБОР АВТОМОБИЛЯ
+        </span>
+
+        <h2>
+          Расскажите, какой автомобиль вы ищете
+        </h2>
+
+        <p>
+          Заполните короткую анкету.
+          Мы изучим ваши пожелания и предложим подходящие варианты.
+        </p>
+
+      </div>
+
+
+      <div class="form-wrapper">
+
+        <!--
+          ВСТАВЬТЕ СЮДА ССЫЛКУ ЯНДЕКС ФОРМЫ
+        -->
+
+        <iframe
+          src="ССЫЛКА_НА_ЯНДЕКС_ФОРМУ"
+          frameborder="0">
+        </iframe>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       ДО ВСТРЕЧИ
+  ========================== -->
+
+  <section class="goodbye">
+
+    <div class="container">
+
+      <h2>
+        До встречи!
+      </h2>
+
+      <p>
+        Спасибо за заявку. Команда ТЕРРА свяжется с вами,
+        чтобы обсудить автомобиль и подготовить варианты для подбора.
+      </p>
+
+      <!-- Можно удалить второй логотип,
+           если он здесь не нужен -->
+
+      <img
+        src="logo.png"
+        alt="ТЕРРА"
+        class="goodbye-logo"
+      >
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+
+    © ТЕРРА — автомобили из Китая и Кореи под заказ
+
+  </footer>
+
+
+</body>
+</html>
